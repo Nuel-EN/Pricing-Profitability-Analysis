@@ -15,6 +15,7 @@ import dash
 from dash import dcc, html, dash_table, Input, Output
 import plotly.express as px
 
+import os
 # ---------------------------
 # Load data from ZIP archive
 # ---------------------------
@@ -194,6 +195,11 @@ def update_dashboard(selected_category):
 # ---------------------------
 # Run the app
 # ---------------------------
+#if __name__ == '__main__':
+ #   app.run(debug=False)
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get('PORT', 8050))  # Use Render's port or default 8050 locally
+    app.run_server(host='0.0.0.0', port=port, debug=True)
+
 
