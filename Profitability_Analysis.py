@@ -18,12 +18,7 @@ import plotly.express as px
 # ---------------------------
 # Load data from ZIP archive
 # ---------------------------
-zip_path = "C:/Users/pronw/Documents/dataset.zip"  # <-- Update this path if needed
-
-with zipfile.ZipFile(zip_path) as z:
-    print("Files in ZIP:", z.namelist())
-    with z.open("product_100000.csv") as f:
-        df = pd.read_csv(f)
+df = pd.read_csv('product_10000.csv')
 
 # ---------------------------
 # Data preparation
@@ -201,3 +196,4 @@ def update_dashboard(selected_category):
 # ---------------------------
 if __name__ == '__main__':
     app.run(debug=False)
+
