@@ -19,4 +19,7 @@ git clone https://github.com/yourusername/Pricing-Profitability-Analysis.git
 cd Pricing-Profitability-Analysis
 pip install -r requirements.txt
 python app.py
-Then open your browser at http://127.0.0.1:8050/
+Then open your browser at http://127.0.0.1:8050/ 
+
+## OR
+visit * https://pricing-profitability-analysis.onrender.com/ * for visualization/results
