@@ -138,6 +138,17 @@ def update_dashboard(selected_category):
     dff = df[df['category'] == selected_category]
     summary = category_summary[category_summary['category'] == selected_category]
 
+    # ---- KEEP ONLY TOP 10 SUBCATEGORIES (BY NUMBER OF BRANDS) ----
+    top_subcats = (
+        dff.groupby('subcategory')['brand']
+           .nunique()
+           .sort_values(ascending=False)
+           .head(10)
+           .index
+    )
+    dff = dff[dff['subcategory'].isin(top_subcats)]
+    # ---------------------------------------------------------------
+
     # --- KPIs ---
     total_products = len(dff)
     total_profit = dff['profit'].sum()
@@ -201,6 +212,7 @@ def update_dashboard(selected_category):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8050))  # Use Render's port or default 8050 locally
     app.run(host='0.0.0.0', port=port, debug=True)
+
 
 
 
