@@ -15,8 +15,8 @@ An interactive dashboard built with **Python Dash** and **Plotly** for analyzing
 
 ## ▶️ How to Run
 ```bash
-git clone https://github.com/yourusername/product_dashboard.git
-cd product_dashboard
+git clone https://github.com/yourusername/Pricing-Profitability-Analysis.git
+cd Pricing-Profitability-Analysis
 pip install -r requirements.txt
 python app.py
 Then open your browser at http://127.0.0.1:8050/
